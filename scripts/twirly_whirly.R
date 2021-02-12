@@ -38,26 +38,25 @@ ggplot(df1) +
   geom_point(aes(x, y), 
              shape = 16, alpha = 0.1, size = 0.05) + 
   theme_void() + 
-  ggsave(here("plots", "tw_1.png"), height = 4, width = 4, units = "in")
+  ggsave(here("plots", "tw_1.png"), height = 3, width = 3, units = "in")
 
 ggplot(df2) + 
   geom_point(aes(x, y), 
              shape = 16, alpha = 0.05, size = 0.05) + 
   theme_void() +
-  ggsave(here("plots", "tw_2.png"), height = 4, width = 4, units = "in")
-
+  ggsave(here("plots", "tw_2.png"), height = 3, width = 3, units = "in")
 
 ggplot(df3) + 
   geom_point(aes(x, y), 
-             shape = 16, alpha = 0.05, size = 0.05) + 
+             shape = 16, alpha = 0.1, size = 0.05) + 
   theme_void() +
-  ggsave(here("plots", "tw_3.png"), height = 4, width = 4, units = "in")
+  ggsave(here("plots", "tw_3.png"), height = 3, width = 3, units = "in")
 
 ggplot(df4) + 
   geom_point(aes(x, y), 
              shape = 16, alpha = 0.05, size = 0.05) + 
   theme_void() +
-  ggsave(here("plots", "tw_4.png"), height = 4, width = 4, units = "in")
+  ggsave(here("plots", "tw_4.png"), height = 3, width = 3, units = "in")
 
 
 # function with randomness-------------
@@ -92,4 +91,4 @@ ggplot(df_runif) +
   geom_point(aes(x, y), 
              shape = 16, alpha = 0.2, size = 0.05) + 
   theme_void() +
-  ggsave(here("plots", "tw_runif.png"), height = 4, width = 4, units = "in")
+  ggsave(here("plots", "tw_runif.png"), height = 3, width = 3, units = "in")
