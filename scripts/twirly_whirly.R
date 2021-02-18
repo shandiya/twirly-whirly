@@ -1,6 +1,8 @@
 # load libraries---------------
 library(ggplot2)
+library(ggpointdensity)
 library(here)
+library(feather)
 
 
 # function without randomness-------------
@@ -33,6 +35,10 @@ df2 <- twirly_whirly(n = 100000, x_1 = 0.1, y_1 = 0.1, a = 2, b = 0.5)
 df3 <- twirly_whirly(n = 100000, x_1 = 0.1, y_1 = 0.1, a = 0.7, b = 5)
 df4 <- twirly_whirly(n = 100000, x_1 = 0.1, y_1 = 0.1, a = 1.2, b = -1.2)
 
+# other cool shapes
+# df <- twirly_whirly(n = 100000, x_1 = 1.2, y_1 = 1.6, a = 1.4, b = 1.5)
+# df <- twirly_whirly(n = 100000, x_1 = 1.2, y_1 = 0.9, a = 1.2, b = 1.8)
+
 # plot
 ggplot(df1) + 
   geom_point(aes(x, y), 
@@ -58,6 +64,17 @@ ggplot(df4) +
   theme_void() +
   ggsave(here("plots", "tw_4.png"), height = 3, width = 3, units = "in")
 
+
+# now in colour! colour based on density
+df5 <- twirly_whirly(n = 100000, x_1 = 1.2, y_1 = 1.6, a = 1.4, b = 1.5)
+
+p5 <- ggplot(df5) +
+  geom_pointdensity(aes(x, y), shape = 16, alpha = 0.2, size = 0.1) +
+  scale_color_gradient(low = get_pal("bee_eater")[5], high = get_pal("bee_eater")[6]) +
+  theme_void() +
+  theme(legend.position = "none")
+
+p5 + ggsave(here("plots", "tw_5.png"), height = 3, width = 3, units = "in")
 
 # function with randomness-------------
 twirly_whirly_runif <- function(n, x_1, y_1, a, b) {
