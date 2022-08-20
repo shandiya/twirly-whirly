@@ -1,4 +1,4 @@
 # twirly-whirly
 shapes that twirl and whirl
 
-![lemony_tw](https://github.com/shandiya/twirly-whirly/blob/main/plots/tw_5.png)
+This repository is now archived. Please visit [variations-on-a-theme](https://github.com/shandiya/variations-on-a-theme) if you are interested in seeing code used to create shapes that twirl and whirl. 
